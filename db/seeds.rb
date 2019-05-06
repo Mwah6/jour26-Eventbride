@@ -13,7 +13,8 @@ User.destroy_all
    first_name: Faker::Movies::LordOfTheRings.character,
    last_name: Faker::Movies::StarWars.planet,
    description: Faker::TvShows::BojackHorseman.quote,
-   email: Faker::Internet.unique.email,
+   email: Faker::Name.first_name + "@yopmail.com",
    encrypted_password: Faker::Internet.password
  )
 end
+User.create(  first_name: Faker::Movies::LordOfTheRings.character,  last_name: Faker::Movies::StarWars.planet,  description: Faker::TvShows::BojackHorseman.quote,  email: "mwah6@yopmail.com",  encrypted_password: Faker::Internet.password)
