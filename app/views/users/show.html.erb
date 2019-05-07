@@ -1,9 +1,13 @@
-<div class="card bg-light mb-3" style="max-width: 18rem;">
-  <div class="card-header"><h4> Prénom : <%= current_user.first_name %><h4>Nom : <%= current_user.last_name%></h4></h4></div>
-  <div class="card-body">
-    <h5 class="card-title">E-mail : <%= current_user.email%> <br><br>
 
-      Inscrit(e) le : <%= current_user.created_at%><br><br></h5>
-    </div>
+
+<div class="card text-primary border-primary " style="max-width: 20rem;">
+  <div class="card-body ">
+    <h4 class="card-title">Prénom : <%= current_user.first_name %>    Nom : <%= current_user.last_name%></h4>
+    <p class="card-text">E-mail : <%= current_user.email%></p>
+    <p class="card-text">Inscrit(e) le : <%= current_user.created_at%></p>
+    <p class="card-text"><%= link_to "Modifier son profil", edit_user_registration_path(current_user) %></p>
+    <!-- <a href="#" class="card-link">Changer mon mot de passe</a> -->
+
   </div>
+
 </div>

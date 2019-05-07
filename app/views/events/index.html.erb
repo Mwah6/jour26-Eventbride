@@ -17,15 +17,18 @@
   <div class="row">
     <%- @events.each do |event| -%>
     <div class="col-md-4 col-lg-5 h-50">
-      <h2>Titre :<%= event.title %></h2>
-      <h3>Date de début :<%= event.start_date %></h3>
-      <h3>Durée (en min) :<%= event.duration %></h3>
-      <h3>Date de début :<%= event.start_date %></h3>
-      <h3>Prix :<%= event.price %></h3>
-      <h3>Localisation :<%= event.location %></h3>
-      <p>Description :<%= event.description %><br>
-        <small>par :<%= event.administrator %> </small><br></p>
+      <a href="<%= event_path(event.id) %>">
+        <h2>Titre :<%= event.title %></h2>
+        <h3>Date de début :<%= event.start_date %></h3>
+        <h3>Durée (en min) :<%= event.duration %></h3>
+        <h3>Date de début :<%= event.start_date %></h3>
+        <h3>Date de fin :<%= event.end_date %></h3>
+        <h3>Prix :<%= event.price %></h3>
+        <h3>Localisation :<%= event.location %></h3>
+        <p>Description :<%= event.description %><br>
+          <small>par :<%= event.administrator.first_name + " " + event.administrator.last_name%> </small><br></p>
+        </a>
+      </div>
+      <%- end -%>
     </div>
-    <%- end -%>
   </div>
-</div>
