@@ -12,9 +12,9 @@ class Event < ApplicationRecord
 
   has_many :attendances
   has_many :users, through: :attendances
-  
+
   def start_date_cannot_be_in_the_past
-    if start_date.present? && start_date < Date.now
+    if start_date.present? && start_date < Date.today
       errors.add(:start_date, "can't be in the past")
     end
   end

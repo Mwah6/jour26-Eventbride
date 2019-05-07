@@ -18,3 +18,19 @@ User.destroy_all
  )
 end
 User.create(  first_name: Faker::Movies::LordOfTheRings.character,  last_name: Faker::Movies::StarWars.planet,  description: Faker::TvShows::BojackHorseman.quote,  email: "mwah6@yopmail.com",  encrypted_password: Faker::Internet.password)
+
+Event.create(start_date: Faker::Date.forward(23), duration:30, title: "testdetitre", description: "descriptiondescriptiondescriptiondescription", price: 50, location: "location", administrator: User.all.sample )
+create_table "events", force: :cascade do |t|
+  t.datetime "start_date"
+  t.integer "duration"
+  t.string "title"
+  t.text "description"
+  t.integer "price"
+  t.string "location"
+  t.bigint "administrator_id"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+  t.index ["administrator_id"], name: "index_events_on_administrator_id"
+end
+
+Attendance.create(user_id: 22, event: Event.all.sample)
