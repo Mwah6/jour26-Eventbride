@@ -1,0 +1,14 @@
+
+<div class="container">
+  <div class="card bg-light mb-3" style="max-width: 48rem;">
+    <div class="card-header">Potin n°<%=@event.id%> ! <br>
+      <Intitulé : <%=@event.title%>, créé le <%=@event.created_at%>,</div>
+      <div class="card-body">
+        <h5 class="card-title">Par <%= link_to @event.administrator.first_name + " " + @event.adminstrator.last_name, user_path(@event.user.id) %>,<br>
+
+          <p class="card-text"><%=@event.description%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
