@@ -20,7 +20,7 @@ User.destroy_all
     encrypted_password: Faker::Internet.password
   )
 end
-User.create(  first_name: Faker::Movies::LordOfTheRings.character,  last_name: Faker::Movies::StarWars.planet,  description: Faker::TvShows::BojackHorseman.quote,  email: "mwah6@yopmail.com",  password: "123456", password_confirmation: "123456")
+user = User.create(  first_name: Faker::Movies::LordOfTheRings.character,  last_name: Faker::Movies::StarWars.planet,  description: Faker::TvShows::BojackHorseman.quote,  email: "mwah6@yopmail.com",  password: "123456", password_confirmation: "123456")
 
 Event.destroy_all
 10.times do
@@ -28,8 +28,14 @@ Event.destroy_all
     start_date: Faker::Date.forward(23), duration: (rand(1..120)*5), title: Faker::Movies::StarWars.planet, description: Faker::TvShows::BojackHorseman.quote, price: rand(1..1000), location: Faker::Movies::LordOfTheRings.character, administrator: User.all.sample
   )
 end
+event = Event.create(
+  start_date: Faker::Date.forward(23), duration: (rand(1..120)*5), title: Faker::Movies::StarWars.planet, description: Faker::TvShows::BojackHorseman.quote, price: rand(1..1000), location: Faker::Movies::LordOfTheRings.character, administrator: user
+)
 
 Attendance.destroy_all
 30.times do
   Attendance.create(user: User.all.sample, event: Event.all.sample)
+end
+5.times do
+  Attendance.create(user: User.all.sample, event: event)
 end

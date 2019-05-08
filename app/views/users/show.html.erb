@@ -11,3 +11,14 @@
   </div>
 
 </div>
+
+<div class="list-group" style="max-width: 18rem;">
+  <%- @events.sort_by{|c| c.created_at}.reverse.each do |event| -%>
+  <div class="card">
+    <a href="<%= event_path(event.id) %>">
+      <div class="card-body">
+        <p class="card-text"><%=event.title%></p>
+        <p class="card-text">Date : <%=event.start_date%></p>
+        <p class="card-text"><small class="text-muted">ajouté le <%=event.created_at%></small></p>
+      </div>
+      <%- end -%>

@@ -1,34 +1,29 @@
-<h1>Eventbride</h1>
-
-
-
 <div class="jumbotron">
   <div class="container">
+
     <div class="d-flex justify-content-around">
-      <h1 class="display-3">Eventbride</h1>
-    </div>
-    <h2>Bienvenue !</h2>
-    <div class="center-create-gossip">
+      <h1 class="display-5">Eventbride</h1>
     </div>
   </div>
 </div>
 
-<div class="d-flex justify-content-center">
-  <div class="row">
-    <%- @events.each do |event| -%>
-    <div class="col-md-4 col-lg-5 h-50">
-      <a href="<%= event_path(event.id) %>">
-        <h2>Titre :<%= event.title %></h2>
-        <h3>Date de début :<%= event.start_date %></h3>
-        <h3>Durée (en min) :<%= event.duration %></h3>
-        <h3>Date de début :<%= event.start_date %></h3>
-        <h3>Date de fin :<%= event.end_date %></h3>
-        <h3>Prix :<%= event.price %></h3>
-        <h3>Localisation :<%= event.location %></h3>
-        <p>Description :<%= event.description %><br>
-          <small>par :<%= event.administrator.first_name + " " + event.administrator.last_name%> </small><br></p>
-        </a>
-      </div>
-      <%- end -%>
-    </div>
+<div class="row">
+  <%- @events.each do |event| -%>
+  <div class="col-md-4">
+    <h5><%= event.title %></h5>
+
+    Date de début :<%= event.start_date %><br>
+    Durée (en min) :<%= event.duration %><br>
+    Date de début :<%= event.start_date %><br>
+    Date de fin :<%= event.end_date %><br>
+    Prix :<%= event.price %><br>
+    Localisation :<%= event.location %><br>
+    par :<%= event.administrator.first_name + " " + event.administrator.last_name%> <br><br>
+    <a href="<%= event_path(event.id) %>" class="btn btn-primary btn-sm">Voir plus</a>
+    <br><br>
+
   </div>
+
+  <%- end -%>
+</div>
+</div>

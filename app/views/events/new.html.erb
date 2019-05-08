@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <br><br><br>
+      <%= form_for @event, html: { class: "form-signin mt-3" } do |f| %>
+      <h1 class="h3 mb-3 font-weight-normal text-center">Sign up</h1>
+
+      <div class="form-group">
+        <%= f.label :start_date, "Date de début" %><br />
+        <%= f.datetime_field :start_date, autofocus: true, autocomplete: "Date de début", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :duration %><br />
+        <%= f.number_field :duration, autocomplete: "Durée en minutes", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :title %><br />
+        <%= f.text_field :title, autocomplete: "Titre", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description %><br />
+        <%= f.text_field :description, autocomplete: "Description", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :price %><br />
+        <%= f.number_field :price, autocomplete: "Prix", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :location %><br />
+        <%= f.text_field :location, autocomplete: "Localisation", class: "form-control" %>
+      </div>
+      <%= f.submit "Enregistrer l'événement", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
