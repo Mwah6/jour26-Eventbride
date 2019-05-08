@@ -1,7 +1,14 @@
 # README
 
 
-Lien Heroku => https://dashboard.heroku.com/apps/mwah6-eventbride
+Lien Heroku => https://mwah6-eventbride.herokuapp.com
+
+@Sebastien B / Sébastien Broin
+
+@Nicephore / Victor Montagné 
+
+@Pyr / Pierre-Yves Rousseau 
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
