@@ -11,11 +11,9 @@
   <%- @events.each do |event| -%>
   <div class="col-md-4">
     <h5><%= event.title %></h5>
-
-    Date de début :<%= event.start_date %><br>
-    Durée (en min) :<%= event.duration %><br>
     Date de début :<%= event.start_date %><br>
     Date de fin :<%= event.end_date %><br>
+    Durée (en min) :<%= event.duration %><br>
     Prix :<%= event.price %><br>
     Localisation :<%= event.location %><br>
     par :<%= event.administrator.first_name + " " + event.administrator.last_name%> <br><br>
